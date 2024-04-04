@@ -1,0 +1,41 @@
+<script>
+    function test(){
+        //location.href="non_fetch"; //전체 정보를 주고받는다(페이지 로드 됨)
+        //fetch("/fetch01")//데이터만 주고받는다(페이지가 로드 되지 않는다)
+        /*
+        const result = retch("/get_count")
+        console.log("result : ", result)
+        result.then(res => {
+            console.log("res : ",res)
+            return res.json();
+        })
+        .then(data => {
+            console.log("data : ",data)
+            document.getElementById("cnt").innerHTML = data.cnt;
+        })
+        */
+
+        fetch("/get_count")
+        .then(res => res.json()) // res.json이 return 된다
+        .then(data => {
+            console.log("data : ",data)
+            document.getElementById("cnt").innerHTML = data.cnt;
+        })
+    }
+    //const test2 = async()=>{}
+    async function test2(){
+       const result = await fetch("/get_count")
+       console.log("result : ",result)
+       console.log("result.json : ",result.json)
+       //result.json()
+       //.then(data =>{})
+       const data = await result.json();
+       console.log("data : ",data)
+       document.getElementById("cnt").innerHTML = data.cnt;
+    }
+
+</script>
+<h1>일</h1><h1>일</h1><h1>일</h1><h1>일</h1><h1>일</h1><h1>일</h1>
+<button onclick="test()">클릭</button>
+<button onclick="test2()">클릭2</button>
+<span id= "cnt"> <%= count %> </span>

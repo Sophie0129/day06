@@ -1,0 +1,47 @@
+<script>
+let quiz = [
+    {id : "aaa", name : "Hong", addr : "마포"},
+    {id : "bbb", name : "Kim", addr : "홍대"},
+    {id : "ccc", name : "Park", addr : "공덕"},
+    {id : "ddd", name : "Choi", addr : "서울"},
+    {id : "eee", name : "Mang", addr : "김포"},
+    {id : "fff", name : "Chea", addr : "청라"},
+    {id : "ggg", name : "Je", addr : "검암"},
+    {id : "sss", name : "Oh", addr : "인천"},
+    {id : "iii", name : "Jo", addr : "쌍문"},
+    {id : "jjj", name : "Jeon", addr : "노원"},
+    {id : "kkk", name : "Lee", addr : "혜화"},
+    {id : "lll", name : "Goo", addr : "미아"},
+    {id : "mmm", name : "Seol", addr : "수유"},
+    {id : "nnn", name : "Seo", addr : "신촌"},
+    {id : "ooo", name : "Mun", addr : "수원"},
+    {id : "ppp", name : "Bea", addr : "천안"},
+    {id : "qqq", name : "Gwn", addr : "두정"},
+    {id : "rrr", name : "Jang", addr : "쌍용"},
+    {id : "sss", name : "Yoon", addr : "영종"},
+    {id : "ttt", name : "San", addr : "운서"},
+    {id : "uuu", name : "Gol", addr : "대전"},
+    {id : "vvv", name : "JJa", addr : "전주"},
+    {id : "www", name : "Gi", addr : "창원"},
+    {id : "xxx", name : "Gil", addr : "부산"},
+    {id : "yyy", name : "Dong", addr : "제주"},
+    {id : "zzz", name : "Gea", addr : "강원"},
+    {id : "123", name : "DDong", addr : "속초"},
+]
+const show3more = () => {
+    
+    for(let i =0 ; num < i ; num++){
+        let num = i
+        i+=3
+        three.innerHTML = 
+        `${quiz[num]}<br>`
+    }
+}
+</script>
+
+
+    <div id="three">
+        
+    <hr>
+    <button onclick="show3more()">3명씩 더 보기</button>
+</div>

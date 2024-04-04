@@ -1,0 +1,36 @@
+///////app03.js 추가
+
+app.get("/view_member", (req, res)=>{
+    res.render("view_member");
+});
+let cnt = 0;
+app.get("/view", (req, res)=>{
+    let number = cnt;
+    cnt += 3;
+    let result = [];
+    for( ; number < cnt ; number++){
+        result = result.concat( members[number] );
+    }
+    res.json( result );
+});
+
+
+/////view_member.ejs 추가
+
+<script>
+const viewMember = () => {
+    fetch("/view",{method : "get"})
+    .then( res => res.json() )
+    .then( data => {
+        let msg = "";
+        console.log( data );
+        data.forEach(member => {
+            msg += member.id +"," + member.name +"," +member.addr +"<br>";
+        })
+        const content = document.getElementById("content");
+        content.insertAdjacentHTML("beforeend",msg); 
+    })
+}
+</script>
+<div id="content"></div> <hr>
+<button type="button" onclick="viewMember()">3명씩 더 보기</button>
